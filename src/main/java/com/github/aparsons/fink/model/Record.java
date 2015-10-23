@@ -29,6 +29,7 @@ public class Record implements Serializable {
 
     public void setValues(List<String> values) {
         checkNotNull(values);
+
         this.values = values;
     }
 
@@ -38,6 +39,7 @@ public class Record implements Serializable {
 
     public void setIndices(Map<String, Index> indices) {
         checkNotNull(indices);
+
         this.indices = indices;
     }
 
@@ -56,6 +58,7 @@ public class Record implements Serializable {
     protected void setIndex(String key, int index) {
         checkArgument(index >= 0);
         checkElementIndex(index, values.size());
+
         indices.put(key, new Index(values, index));
     }
 

@@ -15,19 +15,16 @@ public class ProjectTest {
 
         Project p = new Project();
 
-        System.out.println(p.getFile().isPresent());
-
-        try (FileOutputStream fos = new FileOutputStream(f)) {
-            Serializer.serialize(p, fos);
-        } catch (IOException ioe) {
-            ioe.printStackTrace();
+        try {
+            Serializer.save(p, f);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
 
-        Project in;
-        try (FileInputStream fis = new FileInputStream(f)) {
-            in = Serializer.deserialize(fis);
-        } catch (IOException cnfe) {
-            cnfe.printStackTrace();
+        try {
+            Project project = Serializer.load(f);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
 
     }

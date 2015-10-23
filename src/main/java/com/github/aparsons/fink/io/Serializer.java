@@ -39,6 +39,21 @@ public class Serializer {
         return Serializer.<T>deserialize(new ByteArrayInputStream(bytes));
     }
 
+    public static <T extends Serializable> void save(T obj, File file) throws IOException {
+        checkNotNull(obj);
+        checkNotNull(file);
+        try (FileOutputStream fos = new FileOutputStream(file)) {
+            Serializer.serialize(obj, fos);
+        }
+    }
+
+    public static <T> T load(File file) throws IOException {
+        checkNotNull(file);
+        try (FileInputStream fis = new FileInputStream(file)) {
+            return Serializer.deserialize(fis);
+        }
+    }
+
 }
 
 

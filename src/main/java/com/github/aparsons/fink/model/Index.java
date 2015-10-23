@@ -40,6 +40,7 @@ public class Index implements Serializable {
 
     public void setValue(String value) {
         checkElementIndex(index, values.size());
+
         values.set(index, value);
     }
 
