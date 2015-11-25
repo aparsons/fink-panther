@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="root" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.aparsons.fink.controller.MainWindow">
+  <top>
+    <MenuBar BorderPane.alignment="CENTER">
+      <menus>
+        <Menu text="%menu.file">
+          <items>
+            <MenuItem text="%menuitem.new" />
+            <MenuItem onAction="#handleExitMenuItemAction" text="%menuitem.exit" />
+          </items>
+        </Menu>
+        <Menu text="%menu.edit">
+          <items>
+            <MenuItem text="Delete" />
+          </items>
+        </Menu>
+        <Menu text="%menu.help">
+          <items>
+            <MenuItem text="About" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+  </top>
+  <center>
+    <AnchorPane BorderPane.alignment="CENTER">
+       <children>
+          <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+             <children>
+                <ToolBar>
+                  <items>
+                    <Button onAction="#handleImportButtonAction" text="%button.import" />
+                  </items>
+                </ToolBar>
+                <SplitPane dividerPositions="0.5" VBox.vgrow="ALWAYS">
+                   <items>
+                        <TreeView prefHeight="200.0" prefWidth="200.0" />
+                        <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+                          <tabs>
+                            <Tab text="Untitled Tab 1" />
+                            <Tab text="Untitled Tab 2" />
+                          </tabs>
+                        </TabPane>
+                   </items>
+                </SplitPane>
+             </children>
+          </VBox>
+       </children>
+    </AnchorPane>
+  </center>
+  <bottom>
+    <ToolBar BorderPane.alignment="CENTER">
+      <items>
+        <ProgressBar progress="0.0" />
+      </items>
+    </ToolBar>
+  </bottom>
+</BorderPane>
