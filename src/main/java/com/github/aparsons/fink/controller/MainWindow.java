@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.TreeView;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -27,6 +28,9 @@ public class MainWindow extends Controller {
 
     @FXML
     private BorderPane root;
+
+    @FXML
+    private TreeView treeView;
 
     @FXML
     protected void handleExitMenuItemAction(ActionEvent event) {
@@ -52,6 +56,11 @@ public class MainWindow extends Controller {
         dialog.getStage().initOwner(stage);
         //dialog.show();
         */
+    }
+
+    @FXML
+    protected void handleNewDataTableMenuItemAction(ActionEvent event) {
+        LOG.debug("handleNewDataTableMenuItemAction");
     }
 
     protected void handleOnCloseRequest(WindowEvent event) {

@@ -21,7 +21,7 @@
         </Menu>
         <Menu text="%menu.help">
           <items>
-            <MenuItem text="About" />
+            <MenuItem text="%menuitem.about" />
           </items>
         </Menu>
       </menus>
@@ -39,8 +39,16 @@
                 </ToolBar>
                 <SplitPane dividerPositions="0.5" VBox.vgrow="ALWAYS">
                    <items>
-                        <TreeView prefHeight="200.0" prefWidth="200.0" />
-                        <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+                        <TreeView fx:id="treeView">
+                           <contextMenu>
+                              <ContextMenu>
+                                <items>
+                                  <MenuItem onAction="#handleNewDataTableMenuItemAction" text="New Data Table..." />
+                                </items>
+                              </ContextMenu>
+                           </contextMenu>
+                        </TreeView>
+                        <TabPane tabClosingPolicy="UNAVAILABLE">
                           <tabs>
                             <Tab text="Untitled Tab 1" />
                             <Tab text="Untitled Tab 2" />
